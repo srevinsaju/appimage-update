@@ -138,7 +138,18 @@ func (inst *ZSync) DownloadTo(targetPath string) (err error) {
 		RemoteFileSize: inst.updateControl.FileLength,
 	}
 
-	pb := progressbar.DefaultBytes(zSync2.RemoteFileSize, "Searching reusable chunks")
+    pb := progressbar.NewOptions(zSync2.RemoteFileSize,
+		progressbar.OptionEnableColorCodes(true),
+		progressbar.OptionShowBytes(true),
+		progressbar.OptionSetWidth(20),
+		progressbar.OptionSetDescription("Searching reusable chunks"),
+		progressbar.OptionSetTheme(progressbar.Theme{
+			Saucer:        "[green]=[reset]",
+			SaucerHead:    "[green]>[reset]",
+			SaucerPadding: " ",
+			BarStart:      "[",
+			BarEnd:        "]",
+        }))
 	reusableChunks, err := zSync2.SearchReusableChunks(inst.seed)
 
 	if err != nil {
