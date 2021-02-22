@@ -138,7 +138,7 @@ func (inst *ZSync) DownloadTo(targetPath string) (err error) {
 		RemoteFileSize: inst.updateControl.FileLength,
 	}
 
-    pb := progressbar.NewOptions(zSync2.RemoteFileSize,
+    pb := progressbar.NewOptions(int(zSync2.RemoteFileSize),
 		progressbar.OptionEnableColorCodes(true),
 		progressbar.OptionShowBytes(true),
 		progressbar.OptionSetWidth(20),
