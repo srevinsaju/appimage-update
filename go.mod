@@ -1,4 +1,4 @@
-module github.com/AppImageCrafters/appimage-update
+module github.com/srevinsaju/appimage-update
 
 go 1.13
 

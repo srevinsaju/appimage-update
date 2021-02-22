@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/AppImageCrafters/appimage-update/updaters"
-	"github.com/AppImageCrafters/appimage-update/util"
+	"github.com/srevinsaju/appimage-update/updaters"
+	"github.com/srevinsaju/appimage-update/util"
 )
 
 type Updater interface {
